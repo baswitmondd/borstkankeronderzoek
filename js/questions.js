@@ -85,6 +85,7 @@ const QUESTIONS = [
   },
   {
     id: 4,
+    mirrorIconRTL: true,
     question: "Geeft een goede uitslag je zekerheid?",
     questionLines: ["Geeft een goede", "uitslag je", "zekerheid?"],
     color: "t4",
@@ -154,6 +155,7 @@ const QUESTIONS = [
   },
   {
     id: 7,
+    mirrorIconRTL: true,
     question: "Kan ik gratis meedoen?",
     questionLines: ["Kan ik gratis", "meedoen?"],
     color: "t7",

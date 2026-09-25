@@ -152,10 +152,18 @@ function getDefaultCardIcon(icon) {
 
 // Front/back icon each fall back to this safe default, or to any fields
 // explicitly set in q.frontIcon / q.backIcon to fully control that side.
+// q.mirrorIconRTL: true flips the icon to the opposite horizontal side for
+// RTL languages (Arabic) — the eyebrow/title/text block itself already
+// flips side via [dir="rtl"] in style.css, and some questions' icons sit
+// right where that RTL text lands, so those specific questions opt in to
+// mirroring here rather than every question doing it automatically.
 function getSideIcon(q, side) {
   const override = q[side];
-  if (!override) return getDefaultCardIcon(q.icon);
-  return { ...getDefaultCardIcon(q.icon), ...override };
+  const icon = override ? { ...getDefaultCardIcon(q.icon), ...override } : getDefaultCardIcon(q.icon);
+  if (q.mirrorIconRTL && RTL_LANGS.includes(currentLang)) {
+    return { ...icon, left: 100 - icon.left - icon.size };
+  }
+  return icon;
 }
 
 const langToggle = document.getElementById("lang-toggle");

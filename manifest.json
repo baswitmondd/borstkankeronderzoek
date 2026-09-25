@@ -1,0 +1,26 @@
+{
+  "name": "Wel of niet meedoen aan het bevolkingsonderzoek borstkanker?",
+  "short_name": "BVO Borstkanker",
+  "description": "Wij zetten alle informatie voor je op een rij, jij beslist of je meedoet of niet.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#F9DACD",
+  "theme_color": "#662118",
+  "lang": "nl",
+  "icons": [
+    {
+      "src": "assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

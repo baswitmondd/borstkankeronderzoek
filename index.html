@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Wel of niet meedoen aan het bevolkingsonderzoek borstkanker?</title>
+  <link rel="stylesheet" href="css/style.css?v=20260924e" />
+
+  <!-- PWA: makes "Zet op beginscherm" (Add to Home Screen) launch without
+       the address bar / browser buttons. This only takes effect once the
+       page is actually added to the home screen and reopened from there —
+       a normal Safari tab always keeps its own browser chrome, no meta
+       tag can remove that. -->
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#662118" />
+  <link rel="icon" href="assets/icons/favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="BVO Borstkanker" />
+</head>
+<body>
+  <div class="page">
+    <header class="site-header">
+      <div class="lang-switcher">
+        <button class="lang-toggle" id="lang-toggle" type="button" aria-haspopup="listbox" aria-expanded="false">
+          <span id="lang-current">NL</span>
+          <span class="lang-caret">&#9662;</span>
+        </button>
+        <button class="sound-toggle-btn" id="sound-toggle-btn" type="button" aria-pressed="false" aria-label="Geluid aanzetten"></button>
+        <ul class="lang-menu" id="lang-menu" role="listbox" hidden>
+          <li role="option" aria-selected="true" data-lang="nl">Nederlands</li>
+          <li role="option" aria-selected="false" data-lang="en">English</li>
+          <li role="option" aria-selected="false" data-lang="pl">Polski</li>
+          <li role="option" aria-selected="false" data-lang="uk">Українська</li>
+          <li role="option" aria-selected="false" data-lang="tr">Türkçe</li>
+          <li role="option" aria-selected="false" data-lang="ar">العربية</li>
+        </ul>
+      </div>
+      <img class="logo" src="assets/logo.svg" alt="Rijksinstituut voor Volksgezondheid en Milieu — Ministerie van Volksgezondheid, Welzijn en Sport" />
+    </header>
+
+    <main id="grid-view">
+      <div class="hero-title-row">
+        <h1 class="hero-title"><span id="hero-before">Wel of niet meedoen aan het</span><br /><span class="highlight" id="hero-highlight">bevolkingsonderzoek borstkanker</span><span id="hero-after">?</span></h1>
+        <button class="sound-btn intro-sound-btn" type="button" id="intro-sound-btn" aria-label="Beluister de introductie"></button>
+      </div>
+      <p class="hero-subtitle" id="hero-subtitle"><span id="hero-subtitle-line1">Wij zetten alle informatie voor je op een rij, jij beslist of je meedoet of niet.</span></p>
+      <div class="grid-area">
+        <div class="grid" id="question-grid"></div>
+      </div>
+      <img class="bvo-logo" src="assets/bvo-logo.png" alt="Bevolkingsonderzoek Nederland" />
+    </main>
+
+    <main id="detail-view" hidden>
+      <a href="#" class="back-link" id="back-link"><span class="back-arrow">&laquo;</span> <span id="back-label">Terug naar vragen</span></a>
+      <div class="card">
+        <div class="card-inner" id="card-inner">
+          <div class="card-face card-front">
+            <div class="card-face-clip">
+              <div class="circles" id="front-circles"><div class="c1"></div><div class="c2"></div><div class="c3"></div></div>
+              <div class="card-content">
+                <p class="card-eyebrow" id="front-eyebrow"></p>
+                <div class="card-middle">
+                  <div class="corner-tag-wrap">
+                    <button class="sound-btn card-sound-btn" type="button" id="front-sound-btn" aria-label="Beluister deze kant"></button>
+                    <div class="corner-tag" id="front-corner-tag">De ene kant</div>
+                  </div>
+                  <h2 class="card-title" id="front-title"></h2>
+                  <p class="card-text" id="front-text"></p>
+                </div>
+                <img class="pain-scale" id="pain-scale" src="assets/pain-scale.png" alt="Pijnschaal van 0 (geen pijn) tot 10 (ergst mogelijke pijn), met een score van 4 gemarkeerd." hidden />
+                <button class="flip-btn" type="button" data-flip><span class="flip-label">Bekijk de andere kant</span><span class="flip-divider"></span><span class="flip-icon" aria-hidden="true"></span></button>
+              </div>
+            </div>
+          </div>
+          <div class="card-face card-back">
+            <div class="card-face-clip">
+              <div class="circles" id="back-circles"><div class="c1"></div><div class="c2"></div><div class="c3"></div></div>
+              <div class="card-content">
+                <p class="card-eyebrow" id="back-eyebrow"></p>
+                <div class="card-middle">
+                  <div class="corner-tag-wrap">
+                    <button class="sound-btn card-sound-btn" type="button" id="back-sound-btn" aria-label="Beluister deze kant"></button>
+                    <div class="corner-tag" id="back-corner-tag">De andere kant</div>
+                  </div>
+                  <h2 class="card-title" id="back-title"></h2>
+                  <p class="card-text" id="back-text"></p>
+                </div>
+                <button class="flip-btn" type="button" data-flip><span class="flip-label">Bekijk de andere kant</span><span class="flip-divider"></span><span class="flip-icon" aria-hidden="true"></span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/questions.js?v=20260924a"></script>
+  <script src="js/i18n.js?v=20260924a"></script>
+  <script src="js/app.js?v=20260924c"></script>
+</body>
+</html>

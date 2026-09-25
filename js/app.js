@@ -24,16 +24,15 @@ const backText = document.getElementById("back-text");
 const backCircles = document.getElementById("back-circles");
 
 const painScaleEl = document.getElementById("pain-scale");
-// Pijnschaal (question 2's pain-scale illustration) per language — pl/uk/tr
-// share one image (delivered as a single asset covering all three, no
-// per-language text baked in beyond the numbers). Falls back to nl for any
+// Pijnschaal (question 2's pain-scale illustration) per language — each
+// language has its own image with its labels; falls back to nl for any
 // language without its own file.
 const PAIN_SCALE_IMAGE = {
   nl: "pain-scale-nl.png",
   en: "pain-scale-en.png",
-  pl: "pain-scale-pl-uk-tr.png",
-  uk: "pain-scale-pl-uk-tr.png",
-  tr: "pain-scale-pl-uk-tr.png",
+  pl: "pain-scale-pl.png",
+  uk: "pain-scale-uk.png",
+  tr: "pain-scale-tr.png",
   ar: "pain-scale-ar.png"
 };
 const introSoundBtn = document.getElementById("intro-sound-btn");

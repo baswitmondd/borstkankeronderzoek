@@ -2,8 +2,9 @@
 // "260826_RIVM_Stellingen_V3_prep_<taal>" (English, Polish, Ukrainian,
 // Turkish, Arabic), entered 2026-09-24. Exceptions: backLabel/flipLabel
 // (site buttons) are not in those documents — the Polish ones are a
-// machine translation, the others were already here. Pain-scale labels
-// live inside assets/pain-scale.png and are still Dutch in every language.
+// machine translation, the others were already here. Pain-scale labels/
+// numbers live inside assets/pain-scale-<lang>.png (see PAIN_SCALE_IMAGE
+// in app.js) rather than here.
 // Each language may add questionLines per question (manual line breaks on
 // the tile, see getQuestionLines in app.js).
 const RTL_LANGS = ["ar"];

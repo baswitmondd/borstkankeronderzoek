@@ -977,7 +977,8 @@ body:not(.sound-enabled) .sound-btn {
 }
 
 /* Pain-scale illustration (question 2's front card only) — a static
-   asset (assets/pain-scale.png) used as supplied, not redrawn. A normal
+   static asset (assets/pain-scale-<lang>.png, see PAIN_SCALE_IMAGE in
+   app.js), used as supplied, not redrawn. A normal
    flex item (not absolutely positioned) so it always stacks below the
    eyebrow/title/text instead of floating on top of them. */
 .pain-scale {

@@ -24,6 +24,18 @@ const backText = document.getElementById("back-text");
 const backCircles = document.getElementById("back-circles");
 
 const painScaleEl = document.getElementById("pain-scale");
+// Pijnschaal (question 2's pain-scale illustration) per language — pl/uk/tr
+// share one image (delivered as a single asset covering all three, no
+// per-language text baked in beyond the numbers). Falls back to nl for any
+// language without its own file.
+const PAIN_SCALE_IMAGE = {
+  nl: "pain-scale-nl.png",
+  en: "pain-scale-en.png",
+  pl: "pain-scale-pl-uk-tr.png",
+  uk: "pain-scale-pl-uk-tr.png",
+  tr: "pain-scale-pl-uk-tr.png",
+  ar: "pain-scale-ar.png"
+};
 const introSoundBtn = document.getElementById("intro-sound-btn");
 const soundToggleBtn = document.getElementById("sound-toggle-btn");
 const frontSoundBtn = document.getElementById("front-sound-btn");
@@ -316,6 +328,7 @@ function renderOpenQuestion() {
 
   painScaleEl.hidden = q.id !== 2;
   painScaleEl.closest(".card-content").classList.toggle("has-pain-scale", q.id === 2);
+  painScaleEl.src = `assets/${PAIN_SCALE_IMAGE[currentLang] || PAIN_SCALE_IMAGE.nl}`;
 
   setLinedText(backEyebrow, lines, text.question);
   backTitle.innerHTML = text.back.title;
